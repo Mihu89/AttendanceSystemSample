@@ -43,5 +43,10 @@ namespace MyAttendanceSystem
             }
             
         }
+
+        private void metroButtonAddClass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
