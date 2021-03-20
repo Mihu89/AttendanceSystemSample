@@ -22,6 +22,8 @@ namespace MyAttendanceSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Classes' table. You can move, or remove it, as needed.
+            
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
@@ -40,6 +42,9 @@ namespace MyAttendanceSystem
                     UserID = loginForm.UserID;
                     statusStripUser.Text = UserID.ToString();
                     LoggedIn = 1;
+
+                    this.classesTableAdapter.Fill(this.dataSet1.Classes);
+                    classesBindingSource.Filter = "UserID = '" + UserID.ToString() + "'";
                 }
             }
             
@@ -50,6 +55,11 @@ namespace MyAttendanceSystem
             AddClassForm addClassForm = new AddClassForm();
             addClassForm.UserID = this.UserID;
             addClassForm.ShowDialog();
+        }
+
+        private void metroButtonAddStudent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

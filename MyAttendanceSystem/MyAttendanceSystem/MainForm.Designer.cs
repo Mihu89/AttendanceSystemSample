@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPageAttendance = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPageReports = new MetroFramework.Controls.MetroTabPage();
@@ -43,10 +44,17 @@
             this.statusStripUser = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dataSet1 = new MyAttendanceSystem.DataSet1();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classesTableAdapter = new MyAttendanceSystem.DataSet1TableAdapters.ClassesTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPageAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStripUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -91,12 +99,15 @@
             // 
             // metroComboBox1
             // 
+            this.metroComboBox1.DataSource = this.classesBindingSource;
+            this.metroComboBox1.DisplayMember = "ClassName";
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Location = new System.Drawing.Point(7, 50);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
             this.metroComboBox1.TabIndex = 2;
+            this.metroComboBox1.ValueMember = "ClassID";
             // 
             // metroLabelClass
             // 
@@ -164,6 +175,7 @@
             this.metroButtonAddStudent.Size = new System.Drawing.Size(130, 23);
             this.metroButtonAddStudent.TabIndex = 10;
             this.metroButtonAddStudent.Text = "Add Student";
+            this.metroButtonAddStudent.Click += new System.EventHandler(this.metroButtonAddStudent_Click);
             // 
             // statusStripUser
             // 
@@ -187,6 +199,25 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // classesBindingSource
+            // 
+            this.classesBindingSource.DataMember = "Classes";
+            this.classesBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // classesTableAdapter
+            // 
+            this.classesTableAdapter.ClearBeforeFill = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +234,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStripUser.ResumeLayout(false);
             this.statusStripUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,6 +258,10 @@
         private System.Windows.Forms.StatusStrip statusStripUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource classesBindingSource;
+        private DataSet1TableAdapters.ClassesTableAdapter classesTableAdapter;
     }
 }
 
