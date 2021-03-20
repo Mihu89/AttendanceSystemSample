@@ -16,7 +16,7 @@ namespace MyAttendanceSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AttendanceSystem());
+            Application.Run(new MainForm());
         }
     }
 }
