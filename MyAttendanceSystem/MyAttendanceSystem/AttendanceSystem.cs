@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyAttendanceSystem
 {
-    public partial class Form1 : Form
+    public partial class AttendanceSystem : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public AttendanceSystem()
         {
             InitializeComponent();
         }
