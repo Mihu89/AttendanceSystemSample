@@ -40,9 +40,13 @@
             this.metroButton = new MetroFramework.Controls.MetroButton();
             this.metroButtonAddClass = new MetroFramework.Controls.MetroButton();
             this.metroButtonAddStudent = new MetroFramework.Controls.MetroButton();
+            this.statusStripUser = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPageAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStripUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -57,6 +61,7 @@
             // 
             // metroTabPageAttendance
             // 
+            this.metroTabPageAttendance.Controls.Add(this.statusStripUser);
             this.metroTabPageAttendance.Controls.Add(this.metroButtonAddStudent);
             this.metroTabPageAttendance.Controls.Add(this.metroButtonAddClass);
             this.metroTabPageAttendance.Controls.Add(this.metroButton);
@@ -160,6 +165,28 @@
             this.metroButtonAddStudent.TabIndex = 10;
             this.metroButtonAddStudent.Text = "Add Student";
             // 
+            // statusStripUser
+            // 
+            this.statusStripUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelUser,
+            this.toolStripStatusLabel1});
+            this.statusStripUser.Location = new System.Drawing.Point(0, 623);
+            this.statusStripUser.Name = "statusStripUser";
+            this.statusStripUser.Size = new System.Drawing.Size(1374, 22);
+            this.statusStripUser.TabIndex = 11;
+            this.statusStripUser.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelUser
+            // 
+            this.toolStripStatusLabelUser.Name = "toolStripStatusLabelUser";
+            this.toolStripStatusLabelUser.Size = new System.Drawing.Size(33, 17);
+            this.toolStripStatusLabelUser.Text = "User:";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +201,8 @@
             this.metroTabPageAttendance.ResumeLayout(false);
             this.metroTabPageAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStripUser.ResumeLayout(false);
+            this.statusStripUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -192,6 +221,9 @@
         private MetroFramework.Controls.MetroButton metroButtonAddStudent;
         private MetroFramework.Controls.MetroButton metroButtonAddClass;
         private MetroFramework.Controls.MetroButton metroButton;
+        private System.Windows.Forms.StatusStrip statusStripUser;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUser;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

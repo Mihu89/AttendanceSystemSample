@@ -38,6 +38,7 @@ namespace MyAttendanceSystem
                 else
                 {
                     UserID = loginForm.UserID;
+                    statusStripUser.Text = UserID.ToString();
                     LoggedIn = 1;
                 }
             }
@@ -46,7 +47,9 @@ namespace MyAttendanceSystem
 
         private void metroButtonAddClass_Click(object sender, EventArgs e)
         {
-
+            AddClassForm addClassForm = new AddClassForm();
+            addClassForm.UserID = this.UserID;
+            addClassForm.ShowDialog();
         }
     }
 }
